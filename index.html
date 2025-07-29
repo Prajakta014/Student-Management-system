@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="#" onclick="goToDashboard()">Dashboard</a>
+
+        <a href="about.html">About</a>
+        <a href="profile.html">Student Profile</a>
+        <a href="all-students.html">All Student</a>
+        <a href="logout.html">Logout</a>
+        <!-- Optional, for testing -->
+    </nav>
+    <div class="container">
+        <h1><i class="fa-solid fa-user-graduate"></i> Student Information</h1>
+
+        <div class="input-container">
+            <input type="text" placeholder="Name" id="name" />
+            <input type="email" placeholder="Email" id="email" />
+            <input type="text" placeholder="GPA" id="grade" />
+            <input type="number" placeholder="Age" id="age" />
+            <input type="text" placeholder="Degree" id="degree" />
+        </div>
+
+        <button class="button" id="submit" onclick="addStudent()">Add Student</button>
+
+        <!-- 🔘 New Button to View All Students Page -->
+        <a href="all-students.html">
+            <button class="button view-btn">View All Students</button>
+        </a>
+
+        <input class="search" type="text" id="search" onkeyup="search()" placeholder="Search by Name, Email, or Degree" />
+
+        <table class="table" id="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Student Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>GPA</th>
+                    <th>Degree</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbody"></tbody>
+        </table>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Logout - Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0F0E47;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Horizontal Navbar */
+        
+        .horizontal-navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #272757;
+            padding: 15px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .horizontal-navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .horizontal-navbar a:hover {
+            background-color: #4b4369;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transform: scale(1.05);
+        }
+        
+        .logout-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .logout-container h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .logout-container p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #ccc;
+        }
+        
+        .logout-container a.button {
+            background-color: #8686AC;
+            color: #fff;
+            padding: 4px 16px;
+            width: 200px;
+            /* Reduced padding */
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            background: rgba(255, 255, 255, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        
+        .logout-container a.button:hover {
+            background-color: #635081;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="horizontal-navbar">
+        <a href="index.html">Home</a>
+        <a href="register.html">Login</a>
+        <a href="index.html" onclick="goToDashboard()">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="profile.html">Student Profile</a>
+        <a href="all-students.html">All Students</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <div class="logout-container">
+        <h1>You’ve been logged out</h1>
+        <p>Thank you for using the Student Management System.</p>
+        <a href="register.html" class="button">Login Again</a>
+    </div>
+
+</body>
+
+</html>

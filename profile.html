@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Profile - Prajakta Shinde</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(120deg, #272757, #0F0E47);
+            color: #fff;
+            padding: 0;
+        }
+        /* === Navbar === */
+        
+        .navbar {
+            background-color: #0F0E47;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #505081;
+        }
+        
+        .navbar a {
+            color: #ffffff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: #8686AC;
+        }
+        
+        .profile-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        
+        .profile-container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #505081;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-left {
+            flex: 1 1 250px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #8686AC;
+        }
+        
+        .profile-name {
+            margin-top: 15px;
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        .email {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        
+        .email a {
+            color: #ddd;
+            text-decoration: none;
+        }
+        
+        .about {
+            margin-top: 10px;
+            font-size: 15px;
+            color: #e0e0e0;
+        }
+        
+        .profile-info-boxes {
+            flex: 2 1 600px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .info-box {
+            background-color: #272757;
+            padding: 20px;
+            border-radius: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .info-box h2 {
+            margin-bottom: 10px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+        
+        .info-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .info-box ul li {
+            padding: 5px 0;
+            font-size: 14px;
+            color: #d1d1d1;
+        }
+        
+        @media (max-width: 600px) {
+            .navbar {
+                justify-content: center;
+                text-align: center;
+                flex-direction: column;
+            }
+            .navbar a {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top-right-btn">
+        <button>
+        <a href="index.html" onclick="goToDashboard()" style="color: white; text-decoration: none;">Dashboard</a>
+    </button>
+    </div>
+
+
+    <!-- Navbar -->
+
+
+    <nav class="vertical-navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="register.html">Login</a></li>
+            <li><a href="index.html" onclick="goToDashboard()">Dashboard</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="profile.html">Student Profile</a></li>
+            <li><a href="all-students.html">All Students</a></li>
+            <li><a href="logout.html">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="profile-container">
+            <div class="profile-left">
+                <img class="profile-photo" src="itsme.jpg" alt="Prajakta Shinde" />
+                <h1 class="profile-name">Prajakta Shinde <span class="nickname"></span></h1>
+                <p class="email">📧 <a href="mailto:prajkta014@gmail.com">prajkta014@gmail.com</a></p>
+                <p class="about">I'm a passionate software enthusiast from ENTC, skilled in Python, web development, and VLSI. With a strong tech foundation, I aim to build smart, impactful solutions and secure a top placement in 2027.</p>
+            </div>
+            <div class="profile-info-boxes">
+                <div class="info-box">
+                    <h2>💡 Skills</h2>
+                    <ul>
+                        <li>Python</li>
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>VLSI Design</li>
+                        <li>Embedded Systems</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h2>🛠️ Projects</h2>
+                    <ul>
+                        <li>Food-Order Web</li>
+                        <li>Student Management System</li>
+                        <li>Stopwatch App</li>
+                        <li>Portfolio Website</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h2>🏆 Achievements</h2>
+                    <ul>
+                        <li>Hackathon Participant</li>
+                        <li>Event Participation</li>
+                        <li>Internship Experience</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h2>🎓 Education</h2>
+                    <ul>
+                        <li>Diploma (Computer Technology) - 80.54%</li>
+                        <li>BTech in ENTC (2022–2026) - 9.73/10</li>
+                        <li>Solapur University</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h2>📜 Certificates</h2>
+                    <ul>
+                        <li>IoT & Microcontroller Workshop</li>
+                        <li>Python Bootcamp, Java Bootcamp</li>
+                        <li>Machine Learning with Python</li>
+                        <li>ISRO Workshop AI/ML</li>
+                        <li>Google Cloud Certificate</li>
+                    </ul>
+                </div>
+                <div class="info-box">
+                    <h2>📚 Workshops</h2>
+                    <ul>
+                        <li>Embedded Systems Workshop</li>
+                        <li>Cloud Computing Fundamentals</li>
+                        <li>VLSI Hands-on Bootcamp</li>
+                        <li>Web Development Crash Course</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function goToDashboard() {
+            alert("Dashboard link clicked!");
+            // You can redirect using window.location.href if needed
+        }
+    </script>
+</body>
+
+</html>

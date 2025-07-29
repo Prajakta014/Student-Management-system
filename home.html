@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Student Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(143, 142, 203, 0.8), rgba(132, 130, 204, 0.8)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .dark-mode {
+            background: #fff !important;
+            color: #000 !important;
+        }
+        
+        nav {
+            background: rgba(15, 14, 71, 0.8);
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        nav a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+        
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        .toggle-btn {
+            cursor: pointer;
+            background: #505081;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        .main {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 2rem;
+        }
+        
+        .hero {
+            flex: 1;
+            text-align: right;
+            padding: 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem;
+            padding: 1rem;
+            width: 100%;
+        }
+        
+        .feature-box {
+            background: rgba(80, 80, 129, 0.95);
+            color: #ffffff;
+            padding: 1.5rem;
+            border-radius: 15px;
+            font-size: 1rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: #6d6dc5;
+        }
+        
+        .feature-box h2 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-box ul {
+            list-style-type: none;
+        }
+        
+        .feature-box li {
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+        
+        #clock {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                text-align: center;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .main {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="left-menu">
+            <a href="register.html">Login</a>
+            <a href="index.html">Dashboard</a>
+            <a href="about.html">About</a>
+            <a href="profile.html">Profile</a>
+            <a href="logout.html">Logout</a>
+        </div>
+        <div class="right-menu">
+            <span id="clock"></span>
+            <button class="toggle-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
+    </nav>
+
+    <div class="main">
+        <section class="hero">
+            <h1>Student Management System</h1>
+            <p>Manage and track students effortlessly</p>
+        </section>
+    </div>
+
+
+    <section class="features">
+        <div class="feature-box">
+            <h2>🏅 Rankers</h2>
+            <ul>
+                <li><strong>Prajkata Shinde</strong> <span>SGPA: 9.97/10</span></li>
+                <li><strong>Pratiksha Shinde</strong> <span>SGPA: 9.81/10</span></li>
+                <li><strong>Pradnya Shinde</strong> <span>SGPA: 9.08/10</span></li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>🎯 Branch</h2>
+            <ul>
+                <li>BTech in Electronics & Telecommunication Engineering (ENTC)</li>
+                <li>Focused on Embedded Systems, Microcontrollers, IoT</li>
+                <li>Current Year: 3rd (Batch 2026)</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>🛠️ Skills & Tools</h2>
+            <ul>
+                <li>Python, C, Embedded C</li>
+                <li>HTML, CSS, JavaScript</li>
+                <li>MySQL, SQLite, Git & GitHub</li>
+                <li>Arduino, Proteus, Keil, STM32</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>🧪 Mini Projects</h2>
+            <ul>
+                <li>Smart Dustbin using Arduino</li>
+                <li>Temperature Monitoring System</li>
+                <li>Digital Attendance System</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>🏆 Achievements</h2>
+            <ul>
+                <li>Winner – Code Fiesta Hackathon 2025</li>
+                <li>2nd Place – Circuit Debugging Contest</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>💼 Internship</h2>
+            <ul>
+                <li>Embedded Developer Intern @ DK Technos</li>
+                <li>Worked on IoT-based Automation Projects</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>🎓 Certifications</h2>
+            <ul>
+                <li>Embedded C Programming – Udemy</li>
+                <li>Python for Data Science – Coursera</li>
+                <li>IoT with Raspberry Pi – NPTEL</li>
+            </ul>
+        </div>
+
+        <div class="feature-box">
+            <h2>🤝 Memberships</h2>
+            <ul>
+                <li><strong>IEEE</strong> – Student Member</li>
+                <li><strong>CSI</strong> – Computer Society of India</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <footer class="footer">
+        Developed by Prajakta Shinde | BTech ENTC’26
+    </footer>
+
+    <script>
+        function updateClock() {
+            const now = new Date();
+            document.getElementById("clock").textContent = now.toLocaleTimeString();
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const allBoxes = document.querySelectorAll(".feature-box");
+            allBoxes.forEach(box => box.classList.toggle("dark-mode"));
+        }
+
+        // GSAP Animations
+        gsap.from(".hero h1", {
+            duration: 1,
+            y: -50,
+            opacity: 0
+        });
+        gsap.from(".hero p", {
+            duration: 1.2,
+            delay: 0.3,
+            y: 30,
+            opacity: 0
+        });
+        gsap.from(".feature-box", {
+            duration: 1,
+            opacity: 0,
+            scale: 0.9,
+            stagger: 0.15,
+            ease: "back.out(1.7)"
+        });
+    </script>
+</body>
+
+</html>

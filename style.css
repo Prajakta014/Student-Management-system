@@ -1,0 +1,343 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* Background animation */
+
+body {
+    background: linear-gradient(120deg, #272757, #505081, #8686AC, #0F0E47);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #272757;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Container */
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Heading */
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #272757;
+}
+
+h1 i {
+    margin-right: 10px;
+    color: #505081;
+}
+
+
+/* Input container */
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    flex: 1 1 30%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    background-color: #f9f9ff;
+}
+
+.input-container input:focus {
+    border-color: #505081;
+}
+
+
+/* Buttons */
+
+.button {
+    display: block;
+    width: 100%;
+    margin: 10px 0 20px;
+    padding: 12px;
+    background-color: #505081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.button:hover {
+    background-color: #272757;
+}
+
+
+/* Search box */
+
+.search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f4f4ff;
+}
+
+
+/* Table */
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.table th {
+    background-color: #272757;
+    color: #fff;
+}
+
+.table td:last-child {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.table i {
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 16px;
+    transition: transform 0.2s;
+}
+
+.table .fa-pen {
+    color: #34a853;
+}
+
+.table .fa-trash {
+    color: #ea4335;
+}
+
+.table i:hover {
+    transform: scale(1.1);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .input-container input {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Login container */
+
+.login-container {
+    max-width: 450px;
+    max-height: 800px;
+    margin: 80px auto;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.login-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.login-container input {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.login-container .button {
+    padding: 10px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+}
+
+.note {
+    font-size: 0.75rem;
+    color: #ddd;
+}
+
+@media (max-width: 480px) {
+    .login-container {
+        margin: 50px 20px;
+        padding: 20px;
+    }
+}
+
+body.dark {
+    background: linear-gradient(120deg, #0f0e47, #272757, #505081);
+    color: #f9f9ff;
+}
+
+body.dark .container,
+body.dark .login-container {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark input,
+body.dark .search,
+body.dark .button {
+    background-color: #1f1f3a;
+    color: #fff;
+    border-color: #333;
+}
+
+body.dark .table th {
+    background-color: #0f0e47;
+}
+
+body.dark .table td {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar {
+    background: rgba(39, 39, 87, 0.8);
+    padding: 12px 20px;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.navbar a {
+    color: #f0f0ff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #8686AC;
+    text-shadow: 0 0 8px #8686AC;
+}
+
+.profile-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #505081;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.profile-card {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 3px solid #505081;
+}
+
+.profile-info p {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #fff;
+}

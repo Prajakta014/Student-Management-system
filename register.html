@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Student Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            transition: background-color 0.4s ease;
+            overflow-x: hidden;
+        }
+        
+        .light {
+            background-color: #505081;
+            color: white;
+        }
+        
+        .white {
+            background-color: white;
+            color: #0F0E47;
+        }
+        /* Navbar styling */
+        
+        .navbar {
+            background-color: #272757;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+        }
+        
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: #8686AC;
+        }
+        
+        .login-container {
+            position: relative;
+            z-index: 2;
+            max-width: 400px;
+            margin: 120px auto 0;
+            /* Push down due to navbar */
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        
+        .login-container input,
+        .login-container button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        
+        .login-container input {
+            background: #fff;
+            color: #000;
+        }
+        
+        .login-container button {
+            background-color: #272757;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .login-container button:hover {
+            background-color: #0F0E47;
+        }
+        
+        .note {
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .theme-toggle {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            z-index: 110;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .background-animation {
+            position: fixed;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 20% 20%, #8686AC, #272757, #0F0E47);
+            background-size: 400% 400%;
+            animation: wave 15s ease infinite;
+            z-index: 1;
+            top: -50%;
+            left: -50%;
+        }
+        
+        @keyframes wave {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="light">
+
+    <!-- Background Animation -->
+    <div class="background-animation"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <a href="#" onclick="goToDashboard()">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="profile.html">Profile</a>
+        <a href="all-students.html">All Student</a>
+        <a href="logout.html">Logout</a>
+    </nav>
+
+    <!-- Theme Toggle -->
+    <label class="theme-toggle">
+    <input type="checkbox" id="darkToggle" onchange="toggleTheme()" />
+    Toggle Theme
+  </label>
+
+    <!-- Login Container -->
+    <div class="login-container">
+        <h2><i class="fa-solid fa-lock"></i> Login to Student Portal</h2>
+        <form onsubmit="return login()">
+            <input type="text" id="username" placeholder="Username" required style="width: 350px;" />
+            <input type="password" id="password" placeholder="Password" required style="width: 350px;" />
+            <button type="submit" class="button" required style="width: 370px;">Login</button>
+        </form>
+        <p class="note">Hint: Use <b>admin</b> / <b>1234</b> to log in</p>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function login() {
+            const user = document.getElementById("username").value;
+            const pass = document.getElementById("password").value;
+
+            if (user === "admin" && pass === "1234") {
+                localStorage.setItem("loggedIn", "true");
+                window.location.href = "index.html";
+                return false;
+            } else {
+                alert("Invalid credentials!");
+                return false;
+            }
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle("white");
+            body.classList.toggle("light");
+        }
+
+        function goToDashboard() {
+            if (localStorage.getItem("loggedIn") === "true") {
+                window.location.href = "index.html";
+            } else {
+                alert("Please login first!");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

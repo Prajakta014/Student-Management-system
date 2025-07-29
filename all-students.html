@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Students</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>📋 All Students Information</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Age</th>
+                    <th>GPA</th>
+                    <th>Degree</th>
+                </tr>
+            </thead>
+            <tbody id="studentData"></tbody>
+        </table>
+        <a href="index.html"><button class="button">⬅ Back to Dashboard</button></a>
+    </div>
+
+    <script>
+        const data = JSON.parse(localStorage.getItem("students")) || [];
+        const tbody = document.getElementById("studentData");
+
+        data.forEach((student, index) => {
+            const row = `
+        <tr>
+          <td>${index + 1}</td>
+          <td>${student.name}</td>
+          <td>${student.email}</td>
+          <td>${student.age}</td>
+          <td>${student.gpa}</td>
+          <td>${student.degree}</td>
+        </tr>
+      `;
+            tbody.innerHTML += row;
+        });
+    </script>
+</body>
+
+</html>

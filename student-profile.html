@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="#" onclick="goToDashboard()">Dashboard</a>
+        <a href="register.html">Login</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <div class="container" id="profile-container">
+        <h1>Student Profile</h1>
+        <div class="profile-card">
+            <img id="student-photo" alt="Student Photo" />
+            <div class="profile-info">
+                <p><strong>Name:</strong> <span id="profile-name"></span></p>
+                <p><strong>Email:</strong> <span id="profile-email"></span></p>
+                <p><strong>Age:</strong> <span id="profile-age"></span></p>
+                <p><strong>GPA:</strong> <span id="profile-grade"></span></p>
+                <p><strong>Degree:</strong> <span id="profile-degree"></span></p>
+            </div>
+        </div>
+        <a href="index.html" class="button">⬅ Back to Dashboard</a>
+    </div>
+
+    <script>
+        function goToDashboard() {
+            if (localStorage.getItem("loggedIn") === "true") {
+                window.location.href = "index.html";
+            } else {
+                alert("Please login first!");
+            }
+        }
+
+        const student = JSON.parse(localStorage.getItem("selectedStudent"));
+        if (student) {
+            document.getElementById("student-photo").src = student.photo || "https://via.placeholder.com/150";
+            document.getElementById("profile-name").textContent = student.name;
+            document.getElementById("profile-email").textContent = student.email;
+            document.getElementById("profile-age").textContent = student.age;
+            document.getElementById("profile-grade").textContent = student.grade;
+            document.getElementById("profile-degree").textContent = student.degree;
+        } else {
+            document.getElementById("profile-container").innerHTML = "<p>No student selected.</p>";
+        }
+    </script>
+</body>
+
+</html>
